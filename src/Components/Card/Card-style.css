@@ -1,0 +1,36 @@
+.item {
+    width: 300px;
+    max-width: 300px;
+    margin-top: 30px;
+}
+
+.card-header {
+    background-color: black;
+    color: white;
+}
+
+.card-header span {
+    display: inline-block;
+    position: relative;
+    top: 10px;
+}
+
+.card-body {
+    background-color: whitesmoke;
+}
+
+.card-body input {
+    width: 100px;
+    text-align: center;
+}
+
+.card-body button {
+    width: 80px;
+    background-color: black;
+    color: white;
+    margin-left: 70px;
+}
+
+.card-body button:hover {
+    color: white;
+}
