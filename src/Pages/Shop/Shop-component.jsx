@@ -1,44 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
 import { Card } from "../../Components/Card/Card-component"
 
 import "./Shop-style.css"
-class Shop extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            shopStock: [
-                {
-                    id: 1,
-                    name: "BMW",
-                    price: 2500,
-
-                },
-                {
-                    id: 2,
-                    name: "APPLE",
-                    price: 3500,
-
-                },
-                {
-                    id: 3,
-                    name: "GOOGLE",
-                    price: 6500,
-
-                }
-            ]
-        }
-    }
+export const ShopContainer = ({ shopStock }) => (
+    <div className="shop row">
+        {console.log(...shopStock)}
+        {shopStock.map(item => <Card key={item.id} price={item.price} name={item.name} />)}
+    </div>
+)
 
 
-    render() {
-        return (
-            <div className="shop row">
-                {this.state.shopStock.map(item => <Card key={item.id} price={item.price} name={item.name} />)}
-            </div>
-        )
-    }
-}
 
-export default Shop;
+const mapStateToProps = state => ({
+    shopStock: state.shopStock
+})
+
+
+// const mapDispatchToProps = (dispatch) => (({
+//     addTodo: (todo) => dispatch(addTodo(todo))
+// }))
+
+
+export const Shop = connect(mapStateToProps)(ShopContainer);
