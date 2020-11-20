@@ -2,11 +2,11 @@
 import React from "react";
 import "./Card-style.css";
 
-export const Card = props => (
+export const Card = ({ name, price }) => (
     <div className="card item container-fluid col-md-4">
         <div className="card-header row">
-            <h4 className="item-name ">Nom</h4>
-            <span className="item-price">(prix actuelle:3,000)</span>
+            <h4 className="item-name ">{name}</h4>
+            <span className="item-price">(prix actuelle:{price.toLocaleString()})</span>
         </div>
         <div className="card-body row">
             <input type="number" />
