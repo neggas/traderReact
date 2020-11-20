@@ -10,7 +10,7 @@ export const Card = props => (
         </div>
         <div className="card-body row">
             <input type="number" />
-            <button className="btn card-btn">Buy</button>
+            <button className="btn card-btn ripple">Buy</button>
         </div>
     </div>
 )
