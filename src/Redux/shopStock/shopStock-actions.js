@@ -1,8 +1,8 @@
 
 
-export const toggleCompleted = todo => ({
-    type: "toggleCompleted",
-    payload: { ...todo, completed: !todo.completed }
+export const endDay = (shopStock) => ({
+    type: "ENDAY",
+    payload: shopStock
 })
 
 export const deleteTodo = todo => ({

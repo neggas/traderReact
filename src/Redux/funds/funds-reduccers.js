@@ -1,16 +1,12 @@
 
-const INITIAL_STATE = 1000
+const INITIAL_STATE = 10000
 
 const fundsReduccers = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case "toggleCompleted":
-            return state.map(todo => (todo.id === action.payload.id) ? { ...todo, ...action.payload } : todo)
-        case "deleteTodo":
-            return state.filter(todo => todo.id !== action.payload)
-        case "addTodo":
-            return [...state, { ...action.payload }];
-        case "done":
-            return state.filter(el => el.completed === true);
+        case "BUY":
+            return state - action.payload.price * action.payload.times;
+        case "SELL":
+            return state + (action.payload.price * action.payload.times);
         default:
             return state;
     }

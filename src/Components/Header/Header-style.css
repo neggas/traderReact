@@ -20,3 +20,52 @@
 .selected {
     border-bottom: 1px solid white;
 }
+
+.funds {
+    position: relative;
+    float: right;
+    width: 300px;
+    height: 30px;
+}
+
+.funds h4 {
+    color: white;
+    height: 30px;
+    font-size: 1.4em;
+}
+
+.funds button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    border: 2px solid white;
+    color: White;
+    outline: none;
+    border-radius: 5px;
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple:before {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+}
+
+.ripple:focus:before {
+    transition: all 0.5s ease-out;
+    opacity: 0;
+    width: 160px;
+    height: 160px;
+    margin-top: -80px;
+    margin-left: -80px;
+}

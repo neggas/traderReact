@@ -1,31 +1,30 @@
 
 const INITIAL_STATE = [
     {
-        id: 1,
         name: "BMW",
-        price: 2500,
+        price: 250,
 
     },
     {
-        id: 2,
         name: "APPLE",
-        price: 3500,
+        price: 350,
 
     },
     {
-        id: 3,
         name: "GOOGLE",
-        price: 6500,
-
+        price: 650,
     }
 ]
 
 const shopStockReduccers = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case "toggleCompleted":
-            return state.map(todo => (todo.id === action.payload.id) ? { ...todo, ...action.payload } : todo)
-        case "deleteTodo":
-            return state.filter(todo => todo.id !== action.payload)
+
+        case "ENDAY":
+
+            return state.map(el => ({
+                ...el,
+                price: action.payload.random % 2 === 0 ? el.price + Math.floor(el.price / 100 * action.payload.percent) : el.price - Math.floor(el.price / 100 * action.payload.percent)
+            }))
         case "addTodo":
             return [...state, { ...action.payload }];
         case "done":
